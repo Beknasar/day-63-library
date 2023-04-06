@@ -13,15 +13,14 @@ def home():
 @app.route("/add", methods=["GET", "POST"])
 def add():
     if request.method == "POST":
-        print(request.form)
         book = {
                 "title": request.form['title'],
                 "author": request.form['author'],
                 "rating": request.form['rating'],
             }
-
         all_books.append(book)
-        return redirect(url_for('home', books=all_books))
+
+        return redirect(url_for('home'))
     return render_template("add.html")
 
 
