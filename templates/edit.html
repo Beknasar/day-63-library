@@ -5,9 +5,9 @@
     <title>Add Book</title>
 </head>
 <body>
-    <h2>Book Name: {{ book.title }}</h2>
-    <h2>Current Rating: {{ book.rating }}</h2>
-    <form action="{{ url_for("edit", id=book.id) }}" method="POST">
+    <form action="{{ url_for("edit", book_id=book.id) }}" method="POST">
+        <p>Book Name: {{ book.title }}</p>
+        <p>Current Rating: {{ book.rating }}⭐</p>
         <input type="text" name="rating">
         <button type="submit">Change Rating</button>
     </form>
